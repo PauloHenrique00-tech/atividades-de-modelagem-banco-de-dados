@@ -27,3 +27,10 @@ CREATE TABLE detalhes(
     filmes_idFILME INT NOT NULL
 );
 ```
+
+```sql
+ALTER TABLE filmes
+    ADD CONSTRAINT fk_generos_filmes
+    FOREIGN KEY (generos_idGenero) REFERENCES generos(id);
+    FOREIGN KEY (detalhes_idDetalhes) REFERENCES detalhes(id);
+```
