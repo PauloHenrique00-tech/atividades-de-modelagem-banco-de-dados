@@ -17,3 +17,13 @@ CREATE TABLE filmes(
     generos_idGenero INT NOT NULL
 );
 ```
+
+```sql
+CREATE TABLE detalhes(
+    idDetalhes INT NOT NULL PRIMARY KEY,
+    duracao INT(96),
+    bilheteria DECIMAL,
+    orcamento DECIMAL,
+    filmes_idFILME INT NOT NULL
+);
+```
