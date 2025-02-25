@@ -27,7 +27,7 @@ CREATE TABLE detalhes(
     sinopse TEXT(1000) NOT NULL,
     bilheteria DECIMAL(16,2) NULL,
     orcamento DECIMAL(16,2) NULL,
-    filme_id INT NOT NULL -- será um FK (chave estrangeira)
+    filme_id INT NOT NULL --- será um FK (chave estrangeira)
 );
 ```
 
