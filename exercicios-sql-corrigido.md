@@ -13,7 +13,7 @@ CREATE TABLE generos(
 
 ```sql
 CREATE TABLE filmes(
-    id INT NOT NULL PRIMARY KEY,
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     titulo VARCHAR(200) NOT NULL,
     lancamento DATE NOT NULL,
     genero_id INT NOT NULL -- será uma FK (chave estrangeira)
