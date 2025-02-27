@@ -175,3 +175,18 @@ DELETE FROM fabricantes WHERE id = 1;
 DELETE FROM produtos WHERE id = 4;
 DELETE FROM fabricantes WHERE id = 3;
  ```
+
+## SELECT: outras formas de uso
+
+### Classificação/Ordenação
+
+```sql
+-- DESC: Classifica em ordem decrescente
+-- ASC: Ordena em ordem crescente (padrão)
+SELECT nome, preco FROM produtos ORDER BY nome;
+SELECT nome, preco FROM produtos ORDER BY preco;
+SELECT nome, preco FROM produtos ORDER BY preco DESC;
+
+SELECT nome, preco FROM produtos WHERE fabricante_id = 5 ORDER BY preco;
+
+SELECT nome, preco, quantidade FROM produtos WHERE fabricante_id = 5 ORDER BY quantidade;
