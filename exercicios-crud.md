@@ -29,15 +29,14 @@ VALUES(
 ```
 
 ```sql
-INSERT INTO detalhes(duracao, sinopse,filme_id)
+INSERT INTO detalhes(duracao, sinopse, filme_id)
 ```
 
 ```sql
-INSERT INTO detalhes(duracao, sinopse, filme_id)
+INSERT INTO detalhes(duracao, sinopse,bilheteria, orcamento, filme_id)
 VALUES(
     127,
-    'Deadpool & Wolverine reúne o icônico mercenário tagarela Wade Wilson (Ryan Reynolds) e o poderoso mutante Wolverine (Hugh Jackman) em uma aventura explosiva, escrita e produzida pelos mesmos talentos por trás de Deadpool (2016) e Deadpool 2 (2018). Wade Wilson desfruta de um momento de aparente calma ao lado de Vanessa (Morena Baccarin) e seus amigos e, em contra partida, Wolverine se recupera de seus ferimentos. Um têm os seus caminhos cruzados com o outro, dando início a uma improvável aliança. Juntos, eles enfrentam um inimigo formidável em comum, desencadeando uma jornada repleta de ação, humor e reviravoltas surpreendentes. Deadpool & Wolverine promete ser uma aventura épica, cheia de referências aos quadrinhos e momentos de pura adrenalina, proporcionando aos fãs uma experiência única e inesquecível no universo dos super-heróis.',
-    1
+    'Deadpool & Wolverine reúne o icônico mercenário tagarela Wade Wilson (Ryan Reynolds) e o poderoso mutante Wolverine (Hugh Jackman) em uma aventura explosiva, escrita e produzida pelos mesmos talentos por trás de Deadpool (2016) e Deadpool 2 (2018). Wade Wilson desfruta de um momento de aparente calma ao lado de Vanessa (Morena Baccarin) e seus amigos e, em contra partida, Wolverine se recupera de seus ferimentos. Um têm os seus caminhos cruzados com o outro, dando início a uma improvável aliança. Juntos, eles enfrentam um inimigo formidável em comum, desencadeando uma jornada repleta de ação, humor e reviravoltas surpreendentes. Deadpool & Wolverine promete ser uma aventura épica, cheia de referências aos quadrinhos e momentos de pura adrenalina, proporcionando aos fãs uma experiência única e inesquecível no universo dos super-heróis.',    1
 ), (
     125,
     'Após ser picado por uma libélula geneticamente alterada, Rick Riker (Drake Bell) tem sua vida alterada para sempre. Ele ganha superpoderes e passa a usá-los para combater o mal, sob a alcunha do Homem-Libélula. Entretanto Rick enfrenta um problema: sempre que tenta salvar alguém acaba matando-o acidentalmente. Apesar disto ele precisa enfrentar o Ampulheta, um vilão que deseja roubar a fonte de vida das pessoas para alcançar a imortalidade.',
@@ -56,4 +55,17 @@ UPDATE filmes SET nome = 'Demon Slayer - Mugen Train: O Filme'
 WHERE genero_id = 4;
 
 DELETE from filmes WHERE id = 1;
+
+UPDATE detalhes SET duracao = 117 WHERE filme_id = 4;
+
+UPDATE detalhes SET duracao = 89 WHERE filme_id = 3;
+
+UPDATE filmes SET titulo = 'Deapool & Wolverine' WHERE genero_id = 1;
+```
+
+```sql
+SELECT 
+    filmes.titulo AS Titulo, generos.nome AS Genero,
+    FROM filmes INNER JOIN generos
+    ON filmes.genero_id = filmes.id;
 ```
