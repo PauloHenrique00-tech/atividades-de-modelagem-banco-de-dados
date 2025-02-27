@@ -190,3 +190,31 @@ SELECT nome, preco FROM produtos ORDER BY preco DESC;
 SELECT nome, preco FROM produtos WHERE fabricante_id = 5 ORDER BY preco;
 
 SELECT nome, preco, quantidade FROM produtos WHERE fabricante_id = 5 ORDER BY quantidade;
+```
+
+### Operações e funçoes de agregação
+
+```sql
+-- Função de SOMA (SUM)
+SELECT SUM(preco) FROM produtos;
+
+-- aliás/apelido pra coluna
+SELECT SUM(preco) AS Total FROM produtos; 
+SELECT SUM(preco) AS "Total dos Preços dos Produtos" FROM produtos;
+SELECT nome AS Produto, preco as Preço FROM produtos;
+
+-- Função de formatação/configuração: FORMAT e REPLACE
+SELECT FORMAT(SUM(preco), 2) AS Total FROM produtos;
+SELECT REPLACE(FORMAT(SUM(preco), 2), ",", ".") AS Total FROM produtos;
+
+-- Função de média: AVG (Average)
+SELECT AVG(preco) as "Média dos Preços" FROM produtos;
+SELECT ROUND(AVG(preco), 2) as "Média dos Preços" FROM produtos;
+
+-- Função de contagem: COUNT
+SELECT COUNT(id) AS "Qtd de Produtos" FROM produtos;
+SELECT COUNT(DISTINCT fabricante_id) AS "Qtd de Fabricantes com Produtos" FROM produtos;
+
+-- Operações matemáticas
+SELECT nome, preco, quantidade, (preco * quantidade) as Total FROM produtos;
+```
