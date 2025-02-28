@@ -65,7 +65,14 @@ UPDATE filmes SET titulo = 'Deapool & Wolverine' WHERE genero_id = 1;
 
 ```sql
 SELECT 
-    filmes.titulo AS Titulo, generos.nome AS Genero,
+    filmes.titulo AS Titulo, generos.nome AS Genero
     FROM filmes INNER JOIN generos
     ON filmes.genero_id = filmes.id;
+```
+
+```sql
+SELECT 
+    filmes.titulo AS Titulo, detalhes.sinopse AS Detalhe
+    FROM filmes JOIN detalhes
+    ON detalhes.filme_id = filmes.id;
 ```
